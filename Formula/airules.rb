@@ -10,7 +10,8 @@ class Airules < Formula
 
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "13.0"
-    system "cargo", "install", *std_cargo_args(path: "src-tauri"), "--offline"
+    system "cargo", "install", *std_cargo_args(path: "src-tauri"),
+           "--features", "tauri/custom-protocol", "--offline"
   end
 
   test do
