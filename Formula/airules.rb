@@ -2,7 +2,7 @@ class Airules < Formula
   desc "Synchronize global AI coding rules across local projects"
   homepage "https://github.com/jstruk/airules"
   url "https://github.com/jstruk/airules/releases/download/v0.1.0/airules-0.1.0.tar.gz"
-  sha256 "632bb693bdc1096f6fa64bddce7d4ba8f0149c094d02b4927f95568cf2ebc91f"
+  sha256 "90eafa25f6f0bb3fb9c506215b3a818c9fd5f69a1f8d93159b18bd00e23d009c"
   license "MIT"
 
   depends_on "rust" => :build
