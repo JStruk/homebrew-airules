@@ -1,8 +1,8 @@
 class Airules < Formula
   desc "Synchronize global AI coding rules across local projects"
   homepage "https://github.com/jstruk/airules"
-  url "https://github.com/jstruk/airules/releases/download/v0.1.0/airules-0.1.0.tar.gz"
-  sha256 "90eafa25f6f0bb3fb9c506215b3a818c9fd5f69a1f8d93159b18bd00e23d009c"
+  url "https://github.com/jstruk/airules/releases/download/v0.1.1/airules-0.1.1.tar.gz"
+  sha256 "e77bc55a480cdf6408de401fe1e0f106466aef5e22317f2354442a67ebaacc29"
   license "MIT"
 
   depends_on "rust" => :build
@@ -53,6 +53,7 @@ class Airules < Formula
       state = JSON.parse(state_path.read)
       pid = Integer(state.fetch("pid"))
       assert state.fetch("initialized")
+      assert state.fetch("frontendReady") if version >= Version.new("0.1.1")
       assert_equal "tauri", state.fetch("runtime")
       refute state.fetch("visible")
 
